@@ -117,35 +117,527 @@
   ]
 }
   </script>
-  <style>
-:root { --fg:#1a1a2e; --muted:#5c5c72; --accent:#2d5bff; --bg:#ffffff; --card:#f6f7fb; --line:#e6e8f0; }
-* { box-sizing: border-box; }
-body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color:var(--fg); background:var(--bg); line-height:1.7; }
-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-header { padding: 2rem 0 1rem; border-bottom: 2px solid var(--line); margin-bottom: 1.5rem; }
-.eyebrow { color: var(--accent); font-weight: 600; margin: 0 0 .25rem; letter-spacing: .02em; }
-h1 { font-size: 2.4rem; margin: 0; }
-h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; padding-left: .6rem; border-left: 4px solid var(--accent); }
-section p { margin: .25rem 0 0; }
-ul { margin: .5rem 0 0; padding-left: 1.2rem; }
-li { margin: .25rem 0; }
-.facts, .symbols { list-style: none; padding: 1rem 1.2rem; background: var(--card); border-radius: 12px; }
-.faq details { border: 1px solid var(--line); border-radius: 10px; padding: .5rem .9rem; margin: .5rem 0; }
-.faq summary { cursor: pointer; font-weight: 600; }
-.faq details p { margin: .5rem 0 .25rem; color: var(--muted); }
-.sources { font-size: .9rem; color: var(--muted); }
-a { color: var(--accent); }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
-</style>
+  <script id="region-data" type="application/json">
+{
+  "characteristics": "영도구 인구는 2025년 기준 약 10만 명으로 부산 자치구 가운데 인구가 적고 고령화가 빠르게 진행되는 편이며, 섬이라는 지형적 제약과 조선업 부침으로 인구 감소가 이어져 온 지역입니다. 대평동·남항동 일대는 우리나라 근대 조선산업의 발상지로 수리조선과 선박부품·기자재 업체가 밀집해 여전히 '깡깡이'라 불리는 선박 녹 제거 작업 소리가 이어지는 산업 현장이 살아 있습니다. 동삼동 매립지에는 국립해양박물관·한국해양수산연수원·한국해양과학기술원 등이 모인 동삼혁신지구(해양클러스터)가 조성되어 해양 연구·교육·행정의 거점 역할을 합니다. 최근에는 흰여울문화마을·깡깡이예술마을처럼 노후 주거지와 산업 유산을 문화·예술로 되살린 도시재생이 활발해 관광객이 크게 늘었습니다. 봉래산 자락의 계단식 주거지와 좁은 골목, 바다를 낀 조선소 풍경이 어우러진 서민적이고 향토색 짙은 도시 성격을 지닙니다.",
+  "coords": {
+    "lat": 35.09134,
+    "lng": 129.06825
+  },
+  "cultural_heritage": [
+    {
+      "description": "영도 동남부 하리 바닷가에 자리한 신석기시대 조개무지 유적으로, 빗살무늬토기와 조개·뼈 유물, 대외 교류를 보여주는 유물이 출토된 사적입니다. 인접한 동삼동패총전시관에서 발굴 성과와 선사시대 해양 생활을 살펴볼 수 있습니다.",
+      "name": "부산 동삼동 패총"
+    },
+    {
+      "description": "1912년 우리나라 최초의 근대식 조선소가 들어섰던 대평동 일대를 배경으로, 배의 녹을 벗겨내는 망치질 소리 '깡깡이'에서 이름을 딴 도시재생·문화예술 마을입니다. 조선산업 유산과 벽화·공공미술, 마을박물관을 함께 둘러볼 수 있습니다.",
+      "name": "깡깡이예술마을"
+    },
+    {
+      "description": "해양 관련 유물과 선박 모형, 조선통신사·항해 역사 자료를 소장·전시하는 국립 박물관으로, 해양문화 교육과 전시가 함께 이루어지는 복합 문화공간입니다. 동삼동 해양클러스터의 중심 시설로 기능합니다.",
+      "name": "국립해양박물관"
+    },
+    {
+      "description": "조선시대 국마를 기르던 절영도 목장의 흔적으로, 봉래산 능선에는 목장 경계와 관련된 유적이 전해집니다. 명마의 산지였던 옛 절영도의 지명 유래를 뒷받침하는 역사 자원입니다.",
+      "name": "봉래산 목마 유적"
+    }
+  ],
+  "faq": [
+    {
+      "answer": "네, 영도구는 대한민국 자치구 가운데 유일하게 하나의 섬(영도)만으로 이루어진 자치구로, 네 개의 교량으로 육지와 연결됩니다.",
+      "question": "영도구는 정말 섬 전체가 자치구인가요?"
+    },
+    {
+      "answer": "옛 이름 절영도(絶影島)는 이곳 목장의 말이 그림자가 끊어져 보일 만큼 빨랐다는 데서 유래했으며, 해방 이후 두 글자로 줄여 '영도'로 부르게 되었습니다.",
+      "question": "'영도'라는 이름은 어디서 유래했나요?"
+    },
+    {
+      "answer": "태종대, 흰여울문화마을, 절영해안산책로, 국립해양박물관, 깡깡이예술마을이 대표적이며 대부분 바다를 배경으로 한 명소입니다.",
+      "question": "영도구의 대표 관광지는 어디인가요?"
+    },
+    {
+      "answer": "네, 1934년 준공된 한반도 최초 도개교인 영도대교는 2013년 도개가 재개되어 정해진 시각에 다리 상판이 올라가는 모습을 볼 수 있습니다.",
+      "question": "영도대교는 지금도 다리가 들어올려지나요?"
+    },
+    {
+      "answer": "영도구는 부산에서 유일하게 도시철도가 지나지 않는 지역으로, 시내버스와 마을버스가 주요 대중교통 수단이며 도시철도 도입이 오래 논의되어 왔습니다.",
+      "question": "영도구에 지하철이 있나요?"
+    },
+    {
+      "answer": "배의 녹슨 표면을 망치로 두드려 벗겨내는 작업 소리 '깡깡'에서 유래한 이름으로, 대평동 조선소 일대의 수리조선 문화를 담고 있습니다.",
+      "question": "깡깡이마을의 '깡깡이'는 무슨 뜻인가요?"
+    }
+  ],
+  "geography_nature": "영도구는 부산 도심 남단, 부산항과 남항 사이 바다에 자리한 섬으로 전체가 하나의 육계도 형태를 이루며 면적은 약 14.13㎢입니다. 섬 중앙에는 해발 394.7m의 봉래산이 우뚝 솟아 구를 남북으로 가르고, 산자락이 그대로 바다로 떨어지며 태종대 일대에는 파도의 침식으로 깎인 100m 높이의 해식 절벽과 난대림이 절경을 이룹니다. 동남단 태종대와 서남쪽 절영해안 일대는 바닷물에 다듬어진 암반과 파식대가 발달해 부산지오파크 지질명소로 지정되어 있습니다. 하천다운 하천은 거의 없고 봉래산 기슭에서 흘러내린 물줄기가 흰여울 절벽을 타고 바로 바다로 떨어지며, 감지해변·중리해변 같은 작은 자갈·모래 해변이 해안선을 따라 점점이 놓여 있습니다. 섬 전체가 급경사 지형이라 봉래산을 중심으로 태종로·절영로·와치로 등 순환형 도로망이 발달했습니다.",
+  "history": "영도는 신라 성덕왕 때 국마(國馬)를 기르던 절영도 목장으로 문헌에 등장하며, 조선시대에도 나라의 대표적 말 목장으로 관리되어 봉래산 능선에는 목마의 경계를 표시한 흔적이 전합니다. 조선통신사 일행이 일본으로 떠나기 전 순풍을 기다리며 절영도 앞바다에 배를 대고 대기하던 해상 요충지이기도 했습니다. 개항 이후 근대에 접어들며 1876년 부산 개항과 함께 조선소와 도선장이 들어섰고, 1912년 대평동에 우리나라 최초의 근대식 조선소가 세워지며 조선·수리조선의 요람이 되었습니다. 1934년에는 한반도 최초의 연륙 도개교인 영도대교가 놓여 다리 상판이 하루 몇 차례씩 들어올려지는 진풍경으로 부산의 명물이 되었고, 한국전쟁 때는 피란민들이 헤어진 가족과 만나기로 약속하던 애틋한 장소로 각인되었습니다. 행정적으로는 1957년 부산시 영도구가 설치되었고 1995년 부산광역시 영도구로 개칭되어 오늘에 이릅니다.",
+  "intro": "영도구는 대한민국 자치구 가운데 유일하게 하나의 섬만으로 이루어진 부산의 자치구로, 부산항과 남항 사이에 떠 있는 영도(옛 절영도)가 구역 전체를 이룹니다. 옛 이름 절영도(絶影島)는 이곳 목장에서 기른 말이 그림자(影)가 끊어져(絶) 보일 만큼 빠르다는 데서 유래해, 예로부터 명마의 산지로 이름났습니다. 봉래산이 섬 한가운데 우뚝 솟아 있고 그 자락을 따라 계단식 마을과 조선소, 어항이 촘촘히 들어차 있어 바다와 뭍이 뒤엉킨 독특한 경관을 자아냅니다. 태종대와 흰여울문화마을, 국립해양박물관, 깡깡이예술마을 등 바다를 배경으로 한 명소가 밀집해 부산을 대표하는 해양 관광지로 손꼽힙니다. 근대 조선산업의 발상지이자 한국전쟁 피란민의 애환이 서린 영도대교의 무대로, 부산 근현대사의 상징 공간으로 남아 있습니다.",
+  "landmarks": [
+    {
+      "description": "영도 남동단에 자리한 부산의 대표 암석해안 명승으로, 파도가 깎아낸 100m 높이의 해식 절벽과 울창한 난대림, 태종대 등대·신선바위·전망대가 어우러진 국가지정 명승입니다. 다누비열차를 타고 순환 관람할 수 있어 부산을 찾는 관광객이 즐겨 찾습니다.",
+      "name": "태종대"
+    },
+    {
+      "description": "봉래산 해안 절벽 산비탈에 형성된 계단식 주거지로, 좁은 골목과 새하얀 담벼락 너머로 남항 바다와 정박한 배들이 한눈에 펼쳐집니다. 영화 촬영지로 알려지며 카페와 갤러리가 들어서 '한국의 산토리니'로 불리는 인기 여행지가 되었습니다.",
+      "name": "흰여울문화마을"
+    },
+    {
+      "description": "동삼혁신지구 해양클러스터에 자리한 대한민국 유일의 국립 해양 종합박물관으로, 해양 역사·과학·산업·문화를 아우르는 상설전시와 대형 아쿠아리움을 갖추고 있습니다. 부산의 해양도시 정체성을 보여주는 대표 문화·교육 시설입니다.",
+      "name": "국립해양박물관"
+    },
+    {
+      "description": "1934년 준공된 한반도 최초의 연륙 도개교로, 다리 상판을 들어올리는 도개 장면이 근대 부산의 명물이었습니다. 한동안 중단되었던 도개가 2013년 재개되어 지금도 정해진 시각에 다리가 올라가는 모습을 볼 수 있는 부산 근현대사의 상징입니다.",
+      "name": "영도대교"
+    }
+  ],
+  "nature_rest": [
+    {
+      "description": "흰여울문화마을 아래 바닷가를 따라 이어지는 해안 산책로로, 파도가 다듬은 암반과 자갈 해변, 무지개 계단을 지나며 남항 바다를 가까이서 즐길 수 있습니다. 영도 8경의 하나로 꼽히는 대표 걷기 명소입니다.",
+      "name": "절영해안산책로"
+    },
+    {
+      "description": "영도 한가운데 해발 394.7m로 솟은 섬의 진산으로, 정상 전망대에 오르면 부산항과 오륙도, 부산 도심이 한눈에 조망됩니다. 산복도로와 등산로가 얽혀 있어 주민과 등산객의 휴식 공간이 됩니다.",
+      "name": "봉래산"
+    },
+    {
+      "description": "영도 해안선을 따라 자리한 작은 자갈·모래 해변으로, 태종대와 절영해안을 잇는 산책 구간에서 잔잔한 바다를 감상할 수 있습니다. 낚시와 물놀이, 해안 산책을 즐기려는 이들이 찾는 조용한 휴식처입니다.",
+      "name": "감지해변·중리해변"
+    },
+    {
+      "description": "영도 동남쪽 해안 절벽 위에 조성된 전망 광장으로, 탁 트인 바다와 해안 절경을 배경으로 산책과 조망을 즐길 수 있는 곳입니다. 영도 8경에 포함된 해안 휴식 명소입니다.",
+      "name": "75광장"
+    }
+  ],
+  "org_slug": "kr-busan-yeongdo",
+  "sido": "부산광역시",
+  "sigungu": "영도구",
+  "symbols": {
+    "bird": "갈매기",
+    "flower": "동백꽃",
+    "tree": "해송"
+  },
+  "transport": "영도구는 부산 자치구 가운데 유일하게 도시철도가 지나지 않는 지역으로, 대중교통은 시내버스와 마을버스에 크게 의존합니다. 육지와는 북쪽의 영도대교와 부산대교, 서쪽의 남항대교, 동쪽의 부산항대교 등 네 개의 교량으로만 연결되어 섬 안팎을 오갑니다. 섬 특유의 급경사 지형 탓에 버스 노선은 봉래산을 중심으로 동쪽 태종로 축과 서쪽 절영로·와치로·영선대로 축으로 나뉘어 순환하는 형태로 운행됩니다. 남항대교와 부산항대교는 광안대교로 이어지는 부산 해안순환도로의 핵심 축을 이루어 도심을 거치지 않고 동부산·서부산을 빠르게 오갈 수 있게 합니다. 만성적인 교통 접근성 문제를 풀기 위해 도시철도 영도선 등 새로운 교통망 도입이 오래 논의되어 왔습니다."
+}
+  </script>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="eyebrow">부산광역시</p>
-      <h1>영도구</h1>
-    </header>
-    <div class="content">
-      <section id="intro">
+<style>
+  :root{
+    --yd-rust:#B7410E;
+    --yd-teal:#004B49;
+    --yd-steel:#26302f;
+    --yd-deck:#0f1615;
+    --yd-line:#f4ede4;
+    --yd-cable:#c9c2b3;
+    --yd-cont-a:#B7410E;
+    --yd-cont-b:#004B49;
+    --yd-cont-c:#7a4a2b;
+    --yd-cont-d:#2f5f5c;
+    --yd-cont-e:#8a6a1f;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+  .yd-root{
+    font-family:'Noto Sans KR','Tmon 몬소리',system-ui,sans-serif;
+    color:var(--yd-line);
+    background:var(--yd-deck);
+    background-image:
+      linear-gradient(180deg,#0a1211 0%,#111c1a 55%,#16110d 100%);
+    line-height:1.75;
+    -webkit-text-size-adjust:100%;
+    overflow-x:hidden;
+    position:relative;
+  }
+  .yd-root *{box-sizing:border-box;}
+  .yd-wrap{max-width:1180px;margin:0 auto;padding:0 20px 100px;}
+
+  /* ---------- HERO / GANTRY ---------- */
+  .yd-hero{
+    position:relative;
+    padding:46px 24px 30px;
+    border-bottom:4px solid var(--yd-rust);
+    overflow:hidden;
+  }
+  .yd-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:3;}
+  .yd-kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:700;letter-spacing:.28em;font-size:12px;
+    color:#ffd7a0;text-transform:uppercase;
+    border:2px solid var(--yd-rust);border-radius:2px;
+    padding:6px 12px;background:rgba(183,65,14,.14);
+  }
+  .yd-title{
+    font-family:'Anton','Noto Sans KR',sans-serif;
+    font-weight:400;letter-spacing:.02em;
+    font-size:clamp(38px,8vw,84px);line-height:.98;
+    margin:16px 0 8px;color:#fff;text-transform:uppercase;
+  }
+  .yd-title em{font-style:normal;color:var(--yd-rust);}
+  .yd-sub{
+    font-size:clamp(15px,2.2vw,19px);color:#d7d0c4;
+    max-width:640px;margin:0 0 6px;
+  }
+  .yd-coord{
+    font-family:'Anton',sans-serif;letter-spacing:.15em;
+    font-size:12px;color:#7fb4b0;margin-top:14px;
+  }
+  /* gantry beam + rail decoration */
+  .yd-gantry{position:absolute;inset:0;z-index:1;pointer-events:none;}
+  .yd-beam{
+    position:absolute;top:0;left:0;right:0;height:26px;
+    background:repeating-linear-gradient(45deg,var(--yd-rust) 0 16px,#3a1607 16px 22px);
+    border-bottom:4px solid #000;
+    opacity:.9;
+  }
+  .yd-leg{position:absolute;top:26px;width:14px;height:120%;
+    background:linear-gradient(90deg,#3a3a38,#5a5a55,#2b2b29);
+    border-left:2px solid #000;border-right:2px solid #000;}
+  .yd-leg.l{left:8%;}
+  .yd-leg.r{right:8%;}
+  .yd-wave{
+    position:absolute;bottom:0;left:0;right:0;height:60px;z-index:2;
+    background:
+      radial-gradient(circle at 20% 120%,rgba(0,75,73,.55),transparent 60%),
+      radial-gradient(circle at 70% 130%,rgba(0,75,73,.4),transparent 55%);
+  }
+
+  /* ---------- CRANE INSTRUCTION BAR ---------- */
+  .yd-hint{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:rgba(0,75,73,.28);
+    border:2px dashed #2f5f5c;border-radius:3px;
+    padding:12px 16px;margin:22px auto 6px;max-width:1180px;
+    font-size:14px;color:#bfe0dc;
+  }
+  .yd-hint b{color:#ffd7a0;font-weight:700;}
+  .yd-hint .chip{
+    font-family:'Anton',sans-serif;letter-spacing:.1em;font-size:11px;
+    background:var(--yd-rust);color:#fff;padding:3px 9px;border-radius:2px;
+  }
+
+  /* ---------- YARD (container stack) ---------- */
+  .yd-yard{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;margin-top:30px;
+    padding-top:60px; /* room for crane */
+  }
+
+  /* the crane rig that follows the cursor */
+  .yd-crane{
+    position:absolute;top:0;left:0;width:120px;height:0;
+    transform:translateX(-60px);
+    z-index:40;pointer-events:none;
+    transition:transform .18s cubic-bezier(.2,.7,.3,1);
+    will-change:transform;
+  }
+  .yd-crane .cable{
+    position:absolute;top:0;left:50%;width:3px;height:44px;
+    background:linear-gradient(180deg,#000,var(--yd-cable));
+    transform:translateX(-50%);
+    transition:height .22s cubic-bezier(.2,.7,.3,1);
+  }
+  .yd-crane .hook-hub{
+    position:absolute;top:40px;left:50%;transform:translateX(-50%);
+    width:30px;height:14px;background:#4a4a46;border:2px solid #000;border-radius:2px;
+  }
+  .yd-claw{
+    position:absolute;top:52px;left:50%;transform:translateX(-50%);
+    width:64px;height:34px;
+  }
+  .yd-claw .jaw{
+    position:absolute;top:0;width:8px;height:34px;
+    background:linear-gradient(180deg,#8a8a84,#2b2b29);
+    border:2px solid #000;
+    transition:transform .18s ease;
+  }
+  .yd-claw .jaw.left{left:8px;transform-origin:top center;transform:rotate(20deg);}
+  .yd-claw .jaw.right{right:8px;transform-origin:top center;transform:rotate(-20deg);}
+  .yd-crane.grabbing .jaw.left{transform:rotate(4deg);}
+  .yd-crane.grabbing .jaw.right{transform:rotate(-4deg);}
+  .yd-crane.grabbing .cable{height:30px;}
+  .yd-crane .clamp-txt{
+    position:absolute;top:92px;left:50%;transform:translateX(-50%);
+    font-family:'Anton',sans-serif;font-size:10px;letter-spacing:.12em;
+    color:#ffd7a0;white-space:nowrap;text-transform:uppercase;
+  }
+
+  /* CONTAINER = section box */
+  .yd-cont{
+    position:relative;
+    border:4px solid #000;border-radius:3px;
+    background:var(--yd-cont-a);
+    box-shadow:0 6px 0 rgba(0,0,0,.45), inset 0 0 0 3px rgba(255,255,255,.06);
+    overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+    align-self:start;
+  }
+  .yd-cont:nth-child(6n+1){background:var(--yd-cont-a);}
+  .yd-cont:nth-child(6n+2){background:var(--yd-cont-b);}
+  .yd-cont:nth-child(6n+3){background:var(--yd-cont-c);}
+  .yd-cont:nth-child(6n+4){background:var(--yd-cont-d);}
+  .yd-cont:nth-child(6n+5){background:var(--yd-cont-e);}
+  .yd-cont:nth-child(6n+6){background:var(--yd-cont-b);}
+  /* corrugation */
+  .yd-cont::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 6px,rgba(255,255,255,.04) 6px 14px);
+    opacity:.5;
+  }
+  .yd-cont.hovered{transform:translateY(-6px) rotate(-.4deg);
+    box-shadow:0 14px 0 rgba(0,0,0,.4),0 0 0 4px #ffd7a0;}
+  .yd-cont.lifted{transform:translateY(-14px) rotate(-.6deg) scale(1.01);
+    box-shadow:0 22px 0 rgba(0,0,0,.35),0 0 0 4px #ffd7a0;}
+
+  .yd-cont .placard{
+    position:relative;z-index:2;
+    display:flex;align-items:center;gap:12px;
+    padding:14px 16px;cursor:pointer;
+    border-bottom:4px solid rgba(0,0,0,.35);
+  }
+  .yd-cont .placard .no{
+    font-family:'Anton',sans-serif;font-size:26px;line-height:1;
+    color:rgba(255,255,255,.55);min-width:44px;
+  }
+  .yd-cont .placard h3{
+    margin:0;font-size:18px;font-weight:700;color:#fff;
+    letter-spacing:.01em;flex:1;
+  }
+  .yd-cont .placard .knob{
+    font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.1em;
+    color:#000;background:#ffd7a0;border:2px solid #000;border-radius:2px;
+    padding:3px 8px;text-transform:uppercase;transition:transform .2s ease;
+  }
+  .yd-cont.open .placard .knob{transform:rotate(90deg);}
+
+  /* the actual content body */
+  .yd-cont .cargo{
+    position:relative;z-index:2;
+    background:#f5efe6;color:#20140c;
+    padding:0 20px;
+    max-height:0;overflow:hidden;
+    transition:max-height .5s cubic-bezier(.2,.7,.2,1),padding .4s ease;
+  }
+  .yd-cont.open .cargo{max-height:5000px;padding:18px 20px 24px;}
+
+  /* NO-JS fallback: everything readable & open */
+  .yd-nojs .yd-cont .cargo{max-height:none;padding:18px 20px 24px;}
+  .yd-nojs .yd-crane,.yd-nojs .yd-hint{display:none;}
+
+  /* ---------- CONTENT TYPOGRAPHY (inside cargo) ---------- */
+  .yd-cont .cargo section{margin:0 0 18px;}
+  .yd-cont .cargo section:last-child{margin-bottom:0;}
+  .yd-cont .cargo h2{
+    font-family:'Anton','Noto Sans KR',sans-serif;font-weight:400;
+    font-size:20px;letter-spacing:.01em;margin:0 0 8px;
+    color:var(--yd-rust);text-transform:none;
+    border-left:6px solid var(--yd-teal);padding-left:10px;
+  }
+  .yd-cont .cargo h3{font-size:16px;font-weight:700;margin:14px 0 6px;color:var(--yd-teal);}
+  .yd-cont .cargo p{margin:0 0 10px;font-size:15.5px;color:#2a1c12;}
+  .yd-cont .cargo a{color:var(--yd-rust);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+  .yd-cont .cargo ul,.yd-cont .cargo ol{margin:0 0 12px;padding-left:20px;}
+  .yd-cont .cargo li{margin:4px 0;font-size:15px;}
+  .yd-cont .cargo img{max-width:100%;height:auto;border:3px solid #000;border-radius:2px;}
+
+  .yd-cont .cargo .facts{
+    list-style:none;padding:0;margin:0 0 12px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;
+  }
+  .yd-cont .cargo .facts li{
+    background:#fff;border:3px solid var(--yd-teal);border-radius:2px;
+    padding:10px 12px;font-size:14px;font-weight:500;color:#0a2f2d;
+  }
+  .yd-cont .cargo .symbols{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;
+    list-style:none;padding:0;margin:0 0 12px;
+  }
+  .yd-cont .cargo .symbols li{
+    background:#fff;border:3px solid var(--yd-rust);border-radius:2px;
+    padding:10px 12px;font-size:14px;color:#4a1b0c;
+  }
+  .yd-cont .cargo .faq details{
+    border:3px solid #000;border-radius:2px;margin:0 0 10px;background:#fff;
+    overflow:hidden;
+  }
+  .yd-cont .cargo .faq summary{
+    cursor:pointer;padding:12px 14px;font-weight:700;font-size:15px;
+    color:#fff;background:var(--yd-teal);list-style:none;
+    display:flex;align-items:center;gap:8px;
+  }
+  .yd-cont .cargo .faq summary::-webkit-details-marker{display:none;}
+  .yd-cont .cargo .faq summary::before{content:"⚓";font-size:14px;}
+  .yd-cont .cargo .faq details[open] summary{background:var(--yd-rust);}
+  .yd-cont .cargo .faq details > *:not(summary){padding:12px 14px;}
+
+  /* section color accents by id when JS assigns them */
+  .yd-cont[data-empty] .placard{opacity:.5;}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  .yd-foot{
+    margin-top:50px;padding:22px;border-top:4px solid var(--yd-teal);
+    text-align:center;color:#8fb0ac;font-size:13px;
+    font-family:'Anton',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .yd-foot span{color:var(--yd-rust);}
+
+  @media (max-width:640px){
+    .yd-yard{grid-template-columns:1fr;padding-top:20px;}
+    .yd-crane{display:none;} /* touch: no cursor crane, tap still works */
+    .yd-hint .chip{display:none;}
+  }
+</style>
+
+<div class="yd-root yd-nojs" id="ydRoot">
+  <span class="sr-only">부산광역시 영도구 지역 정보 페이지. 상단 크레인 집게로 컨테이너 섹션을 집어 올리면 내용이 펼쳐지며, 자바스크립트가 없어도 모든 지역 정보 텍스트를 그대로 읽을 수 있습니다.</span>
+
+  <!-- ====== HERO / GANTRY ====== -->
+  <header class="yd-hero">
+    <div class="yd-gantry" aria-hidden="true">
+      <div class="yd-beam"></div>
+      <div class="yd-leg l"></div>
+      <div class="yd-leg r"></div>
+      <div class="yd-wave"></div>
+    </div>
+    <div class="yd-hero-inner">
+      <span class="yd-kicker"><i class="ti ti-anchor" aria-hidden="true"></i>부산광역시 · 조선소·항만 도크</span>
+      <h1 class="yd-title">영도구<br><em>YARD</em></h1>
+      <p class="yd-sub">영도구는 대한민국 자치구 가운데 유일하게 하나의 섬만으로 이루어진 부산의 자치구로, 부산항과 남항 사이에 떠 있는 영도(옛 절영도)가 구역 전체를 이룹니다. 옛 이름 절영도(絶影島)는 이곳 목장에서 기른 말이 그림자(影)가 끊어져(絶) 보일 만큼 빠르다는 데서 유래해, 예로부터 명마의 산지로 이름났습니다. 봉래산이 섬 한가운데 우뚝 솟아 있고 그 자락을 따라 계단식 마을과 조선소, 어항이 촘촘히 들어차 있어 바다와 뭍이 뒤엉킨 독특한 경관을 자아냅니다. 태종대와 흰여울문화마을, 국립해양박물관, 깡깡이예술마을 등 바다를 배경으로 한 명소가 밀집해 부산을 대표하는 해양 관광지로 손꼽힙니다. 근대 조선산업의 발상지이자 한국전쟁 피란민의 애환이 서린 영도대교의 무대로, 부산 근현대사의 상징 공간으로 남아 있습니다.</p>
+      <div class="yd-coord" id="ydCoord">◐ GANTRY CRANE TERMINAL · kr-busan-yeongdo</div>
+    </div>
+  </header>
+
+  <div class="yd-hint" aria-hidden="true">
+    <span class="chip">CRANE</span>
+    <span>마우스를 움직여 <b>크레인 집게</b>를 조종하고, 컨테이너를 <b>집어 올려(클릭)</b> 지역 정보를 하역하세요.</span>
+  </div>
+
+  <div class="yd-wrap">
+    <!-- ====== CONTAINER YARD ====== -->
+    <div class="yd-yard" id="ydYard" aria-hidden="false">
+      <!-- crane rig -->
+      <div class="yd-crane" id="ydCrane" aria-hidden="true">
+        <div class="cable"></div>
+        <div class="hook-hub"></div>
+        <div class="yd-claw">
+          <div class="jaw left"></div>
+          <div class="jaw right"></div>
+        </div>
+        <div class="clamp-txt" id="ydClampTxt">◇ IDLE</div>
+      </div>
+
+      <!--       <section id="intro">
+        <h2>지역 소개</h2>
+        <p>영도구는 대한민국 자치구 가운데 유일하게 하나의 섬만으로 이루어진 부산의 자치구로, 부산항과 남항 사이에 떠 있는 영도(옛 절영도)가 구역 전체를 이룹니다. 옛 이름 절영도(絶影島)는 이곳 목장에서 기른 말이 그림자(影)가 끊어져(絶) 보일 만큼 빠르다는 데서 유래해, 예로부터 명마의 산지로 이름났습니다. 봉래산이 섬 한가운데 우뚝 솟아 있고 그 자락을 따라 계단식 마을과 조선소, 어항이 촘촘히 들어차 있어 바다와 뭍이 뒤엉킨 독특한 경관을 자아냅니다. 태종대와 흰여울문화마을, 국립해양박물관, 깡깡이예술마을 등 바다를 배경으로 한 명소가 밀집해 부산을 대표하는 해양 관광지로 손꼽힙니다. 근대 조선산업의 발상지이자 한국전쟁 피란민의 애환이 서린 영도대교의 무대로, 부산 근현대사의 상징 공간으로 남아 있습니다.</p>
+      </section>
+      <section id="facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 101,580명 (2025)</li>
+          <li>면적: 14.13 km²</li>
+          <li>신설: 1957년 1월 1일</li>
+        </ul>
+      </section>
+      <section id="history">
+        <h2>역사</h2>
+        <p>영도는 신라 성덕왕 때 국마(國馬)를 기르던 절영도 목장으로 문헌에 등장하며, 조선시대에도 나라의 대표적 말 목장으로 관리되어 봉래산 능선에는 목마의 경계를 표시한 흔적이 전합니다. 조선통신사 일행이 일본으로 떠나기 전 순풍을 기다리며 절영도 앞바다에 배를 대고 대기하던 해상 요충지이기도 했습니다. 개항 이후 근대에 접어들며 1876년 부산 개항과 함께 조선소와 도선장이 들어섰고, 1912년 대평동에 우리나라 최초의 근대식 조선소가 세워지며 조선·수리조선의 요람이 되었습니다. 1934년에는 한반도 최초의 연륙 도개교인 영도대교가 놓여 다리 상판이 하루 몇 차례씩 들어올려지는 진풍경으로 부산의 명물이 되었고, 한국전쟁 때는 피란민들이 헤어진 가족과 만나기로 약속하던 애틋한 장소로 각인되었습니다. 행정적으로는 1957년 부산시 영도구가 설치되었고 1995년 부산광역시 영도구로 개칭되어 오늘에 이릅니다.</p>
+      </section>
+      <section id="geography">
+        <h2>지리·자연환경</h2>
+        <p>영도구는 부산 도심 남단, 부산항과 남항 사이 바다에 자리한 섬으로 전체가 하나의 육계도 형태를 이루며 면적은 약 14.13㎢입니다. 섬 중앙에는 해발 394.7m의 봉래산이 우뚝 솟아 구를 남북으로 가르고, 산자락이 그대로 바다로 떨어지며 태종대 일대에는 파도의 침식으로 깎인 100m 높이의 해식 절벽과 난대림이 절경을 이룹니다. 동남단 태종대와 서남쪽 절영해안 일대는 바닷물에 다듬어진 암반과 파식대가 발달해 부산지오파크 지질명소로 지정되어 있습니다. 하천다운 하천은 거의 없고 봉래산 기슭에서 흘러내린 물줄기가 흰여울 절벽을 타고 바로 바다로 떨어지며, 감지해변·중리해변 같은 작은 자갈·모래 해변이 해안선을 따라 점점이 놓여 있습니다. 섬 전체가 급경사 지형이라 봉래산을 중심으로 태종로·절영로·와치로 등 순환형 도로망이 발달했습니다.</p>
+      </section>
+      <section id="characteristics">
+        <h2>지역 특징</h2>
+        <p>영도구 인구는 2025년 기준 약 10만 명으로 부산 자치구 가운데 인구가 적고 고령화가 빠르게 진행되는 편이며, 섬이라는 지형적 제약과 조선업 부침으로 인구 감소가 이어져 온 지역입니다. 대평동·남항동 일대는 우리나라 근대 조선산업의 발상지로 수리조선과 선박부품·기자재 업체가 밀집해 여전히 &#x27;깡깡이&#x27;라 불리는 선박 녹 제거 작업 소리가 이어지는 산업 현장이 살아 있습니다. 동삼동 매립지에는 국립해양박물관·한국해양수산연수원·한국해양과학기술원 등이 모인 동삼혁신지구(해양클러스터)가 조성되어 해양 연구·교육·행정의 거점 역할을 합니다. 최근에는 흰여울문화마을·깡깡이예술마을처럼 노후 주거지와 산업 유산을 문화·예술로 되살린 도시재생이 활발해 관광객이 크게 늘었습니다. 봉래산 자락의 계단식 주거지와 좁은 골목, 바다를 낀 조선소 풍경이 어우러진 서민적이고 향토색 짙은 도시 성격을 지닙니다.</p>
+      </section>
+      <section id="landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>태종대</strong> — 영도 남동단에 자리한 부산의 대표 암석해안 명승으로, 파도가 깎아낸 100m 높이의 해식 절벽과 울창한 난대림, 태종대 등대·신선바위·전망대가 어우러진 국가지정 명승입니다. 다누비열차를 타고 순환 관람할 수 있어 부산을 찾는 관광객이 즐겨 찾습니다.</li>
+          <li><strong>흰여울문화마을</strong> — 봉래산 해안 절벽 산비탈에 형성된 계단식 주거지로, 좁은 골목과 새하얀 담벼락 너머로 남항 바다와 정박한 배들이 한눈에 펼쳐집니다. 영화 촬영지로 알려지며 카페와 갤러리가 들어서 &#x27;한국의 산토리니&#x27;로 불리는 인기 여행지가 되었습니다.</li>
+          <li><strong>국립해양박물관</strong> — 동삼혁신지구 해양클러스터에 자리한 대한민국 유일의 국립 해양 종합박물관으로, 해양 역사·과학·산업·문화를 아우르는 상설전시와 대형 아쿠아리움을 갖추고 있습니다. 부산의 해양도시 정체성을 보여주는 대표 문화·교육 시설입니다.</li>
+          <li><strong>영도대교</strong> — 1934년 준공된 한반도 최초의 연륙 도개교로, 다리 상판을 들어올리는 도개 장면이 근대 부산의 명물이었습니다. 한동안 중단되었던 도개가 2013년 재개되어 지금도 정해진 시각에 다리가 올라가는 모습을 볼 수 있는 부산 근현대사의 상징입니다.</li>
+        </ul>
+      </section>
+      <section id="heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>부산 동삼동 패총</strong> — 영도 동남부 하리 바닷가에 자리한 신석기시대 조개무지 유적으로, 빗살무늬토기와 조개·뼈 유물, 대외 교류를 보여주는 유물이 출토된 사적입니다. 인접한 동삼동패총전시관에서 발굴 성과와 선사시대 해양 생활을 살펴볼 수 있습니다.</li>
+          <li><strong>깡깡이예술마을</strong> — 1912년 우리나라 최초의 근대식 조선소가 들어섰던 대평동 일대를 배경으로, 배의 녹을 벗겨내는 망치질 소리 &#x27;깡깡이&#x27;에서 이름을 딴 도시재생·문화예술 마을입니다. 조선산업 유산과 벽화·공공미술, 마을박물관을 함께 둘러볼 수 있습니다.</li>
+          <li><strong>국립해양박물관</strong> — 해양 관련 유물과 선박 모형, 조선통신사·항해 역사 자료를 소장·전시하는 국립 박물관으로, 해양문화 교육과 전시가 함께 이루어지는 복합 문화공간입니다. 동삼동 해양클러스터의 중심 시설로 기능합니다.</li>
+          <li><strong>봉래산 목마 유적</strong> — 조선시대 국마를 기르던 절영도 목장의 흔적으로, 봉래산 능선에는 목장 경계와 관련된 유적이 전해집니다. 명마의 산지였던 옛 절영도의 지명 유래를 뒷받침하는 역사 자원입니다.</li>
+        </ul>
+      </section>
+      <section id="nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>절영해안산책로</strong> — 흰여울문화마을 아래 바닷가를 따라 이어지는 해안 산책로로, 파도가 다듬은 암반과 자갈 해변, 무지개 계단을 지나며 남항 바다를 가까이서 즐길 수 있습니다. 영도 8경의 하나로 꼽히는 대표 걷기 명소입니다.</li>
+          <li><strong>봉래산</strong> — 영도 한가운데 해발 394.7m로 솟은 섬의 진산으로, 정상 전망대에 오르면 부산항과 오륙도, 부산 도심이 한눈에 조망됩니다. 산복도로와 등산로가 얽혀 있어 주민과 등산객의 휴식 공간이 됩니다.</li>
+          <li><strong>감지해변·중리해변</strong> — 영도 해안선을 따라 자리한 작은 자갈·모래 해변으로, 태종대와 절영해안을 잇는 산책 구간에서 잔잔한 바다를 감상할 수 있습니다. 낚시와 물놀이, 해안 산책을 즐기려는 이들이 찾는 조용한 휴식처입니다.</li>
+          <li><strong>75광장</strong> — 영도 동남쪽 해안 절벽 위에 조성된 전망 광장으로, 탁 트인 바다와 해안 절경을 배경으로 산책과 조망을 즐길 수 있는 곳입니다. 영도 8경에 포함된 해안 휴식 명소입니다.</li>
+        </ul>
+      </section>
+      <section id="transport">
+        <h2>교통</h2>
+        <p>영도구는 부산 자치구 가운데 유일하게 도시철도가 지나지 않는 지역으로, 대중교통은 시내버스와 마을버스에 크게 의존합니다. 육지와는 북쪽의 영도대교와 부산대교, 서쪽의 남항대교, 동쪽의 부산항대교 등 네 개의 교량으로만 연결되어 섬 안팎을 오갑니다. 섬 특유의 급경사 지형 탓에 버스 노선은 봉래산을 중심으로 동쪽 태종로 축과 서쪽 절영로·와치로·영선대로 축으로 나뉘어 순환하는 형태로 운행됩니다. 남항대교와 부산항대교는 광안대교로 이어지는 부산 해안순환도로의 핵심 축을 이루어 도심을 거치지 않고 동부산·서부산을 빠르게 오갈 수 있게 합니다. 만성적인 교통 접근성 문제를 풀기 위해 도시철도 영도선 등 새로운 교통망 도입이 오래 논의되어 왔습니다.</p>
+      </section>
+      <section id="symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 동백꽃</li>
+          <li>구목(나무): 해송</li>
+          <li>구조(새): 갈매기</li>
+        </ul>
+      </section>
+      <section id="faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>영도구는 정말 섬 전체가 자치구인가요?</summary>
+            <p>네, 영도구는 대한민국 자치구 가운데 유일하게 하나의 섬(영도)만으로 이루어진 자치구로, 네 개의 교량으로 육지와 연결됩니다.</p>
+          </details>
+          <details>
+            <summary>&#x27;영도&#x27;라는 이름은 어디서 유래했나요?</summary>
+            <p>옛 이름 절영도(絶影島)는 이곳 목장의 말이 그림자가 끊어져 보일 만큼 빨랐다는 데서 유래했으며, 해방 이후 두 글자로 줄여 &#x27;영도&#x27;로 부르게 되었습니다.</p>
+          </details>
+          <details>
+            <summary>영도구의 대표 관광지는 어디인가요?</summary>
+            <p>태종대, 흰여울문화마을, 절영해안산책로, 국립해양박물관, 깡깡이예술마을이 대표적이며 대부분 바다를 배경으로 한 명소입니다.</p>
+          </details>
+          <details>
+            <summary>영도대교는 지금도 다리가 들어올려지나요?</summary>
+            <p>네, 1934년 준공된 한반도 최초 도개교인 영도대교는 2013년 도개가 재개되어 정해진 시각에 다리 상판이 올라가는 모습을 볼 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>영도구에 지하철이 있나요?</summary>
+            <p>영도구는 부산에서 유일하게 도시철도가 지나지 않는 지역으로, 시내버스와 마을버스가 주요 대중교통 수단이며 도시철도 도입이 오래 논의되어 왔습니다.</p>
+          </details>
+          <details>
+            <summary>깡깡이마을의 &#x27;깡깡이&#x27;는 무슨 뜻인가요?</summary>
+            <p>배의 녹슨 표면을 망치로 두드려 벗겨내는 작업 소리 &#x27;깡깡&#x27;에서 유래한 이름으로, 대평동 조선소 일대의 수리조선 문화를 담고 있습니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.yeongdo.go.kr/" rel="noopener">영도구청 공식 홈페이지</a></li>
+          <li><a href="https://www.yeongdo.go.kr/tour/index.yeongdo" rel="noopener">영도구 문화관광</a></li>
+        </ul>
+      </section>
+      <section id="sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EC%98%81%EB%8F%84%EA%B5%AC" rel="noopener">영도구 - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.yeongdo.go.kr/00492/00521/00530.web" rel="noopener">영도구청 지명유래</a> (조회 2026-07-08)</li>
+          <li><a href="https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=5f7fb0be-1d36-4045-9f55-180bc0d21e1f" rel="noopener">깡깡이예술마을 - 대한민국 구석구석(한국관광공사)</a> (조회 2026-07-08)</li>
+          <li><a href="https://ko.wikipedia.org/wiki/%EB%B6%80%EC%82%B0_%EB%8F%99%EC%82%BC%EB%8F%99_%ED%8C%A8%EC%B4%9D" rel="noopener">부산 동삼동 패총 - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://superkts.com/population/data/Busan/Yeongdo-gu" rel="noopener">부산광역시 영도구 인구통계 - superkts</a> (조회 2026-07-08)</li>
+        </ul>
+      </section> is injected here as raw sections; JS wraps each into a container -->
+      <div id="ydRaw">
+              <section id="intro">
         <h2>지역 소개</h2>
         <p>영도구는 대한민국 자치구 가운데 유일하게 하나의 섬만으로 이루어진 부산의 자치구로, 부산항과 남항 사이에 떠 있는 영도(옛 절영도)가 구역 전체를 이룹니다. 옛 이름 절영도(絶影島)는 이곳 목장에서 기른 말이 그림자(影)가 끊어져(絶) 보일 만큼 빠르다는 데서 유래해, 예로부터 명마의 산지로 이름났습니다. 봉래산이 섬 한가운데 우뚝 솟아 있고 그 자락을 따라 계단식 마을과 조선소, 어항이 촘촘히 들어차 있어 바다와 뭍이 뒤엉킨 독특한 경관을 자아냅니다. 태종대와 흰여울문화마을, 국립해양박물관, 깡깡이예술마을 등 바다를 배경으로 한 명소가 밀집해 부산을 대표하는 해양 관광지로 손꼽힙니다. 근대 조선산업의 발상지이자 한국전쟁 피란민의 애환이 서린 영도대교의 무대로, 부산 근현대사의 상징 공간으로 남아 있습니다.</p>
       </section>
@@ -254,10 +746,175 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
           <li><a href="https://superkts.com/population/data/Busan/Yeongdo-gu" rel="noopener">부산광역시 영도구 인구통계 - superkts</a> (조회 2026-07-08)</li>
         </ul>
       </section>
+      </div>
     </div>
-    <footer>
-      <p>이 페이지는 공개 자료를 바탕으로 작성된 영도구 지역 정보 페이지입니다.</p>
-    </footer>
-  </main>
+
+    <div class="yd-foot">
+      ⚓ 영도구 · 부산광역시 <span>◆</span> HARBOR DATA YARD <span>◆</span> kr-busan-yeongdo
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('ydRoot');
+  if(!root)return;
+  root.classList.remove('yd-nojs'); /* JS on: enable crane + collapse */
+
+  var raw=document.getElementById('ydRaw');
+  var yard=document.getElementById('ydYard');
+  if(!raw||!yard)return;
+
+  /* Korean labels for known section ids */
+  var LABELS={
+    intro:'지역 소개',facts:'핵심 정보',history:'역사',geography:'지리',
+    characteristics:'특성',landmarks:'명소',heritage:'문화유산',
+    nature:'자연·휴식',transport:'교통',symbols:'상징',faq:'자주 묻는 질문',
+    links:'관련 링크',sources:'출처'
+  };
+
+  /* Collect top-level sections from injected content */
+  var sections=Array.prototype.slice.call(raw.querySelectorAll(':scope > section'));
+  if(!sections.length){
+    /* fallback: any section anywhere */
+    sections=Array.prototype.slice.call(raw.querySelectorAll('section'));
+  }
+
+  if(!sections.length){
+    /* nothing to wrap: leave raw content visible (already readable) */
+    raw.style.background='#f5efe6';
+    raw.style.color='#20140c';
+    raw.style.padding='20px';
+    raw.style.borderRadius='3px';
+    return;
+  }
+
+  var frag=document.createDocumentFragment();
+  var idx=0;
+
+  sections.forEach(function(sec){
+    idx++;
+    var id=sec.id||'';
+    /* try to read the section's own h2 for the placard title */
+    var h=sec.querySelector('h2,h3,h1');
+    var label=LABELS[id]||(h?h.textContent.trim():'구역 '+idx);
+
+    var cont=document.createElement('article');
+    cont.className='yd-cont';
+    cont.setAttribute('data-id',id||('sec'+idx));
+
+    var no=('0'+idx).slice(-2);
+
+    var placard=document.createElement('div');
+    placard.className='placard';
+    placard.setAttribute('role','button');
+    placard.setAttribute('tabindex','0');
+    placard.setAttribute('aria-expanded','false');
+    placard.innerHTML='<span class="no">'+no+'</span><h3>'+escapeHtml(label)+'</h3><span class="knob">▸ LIFT</span>';
+
+    var cargo=document.createElement('div');
+    cargo.className='cargo';
+    cargo.appendChild(sec); /* move real section (with its own h2/text) inside */
+
+    cont.appendChild(placard);
+    cont.appendChild(cargo);
+    frag.appendChild(cont);
+  });
+
+  /* clear raw wrapper and mount containers directly into yard */
+  raw.parentNode.insertBefore(frag,raw);
+  raw.parentNode.removeChild(raw);
+
+  var containers=Array.prototype.slice.call(yard.querySelectorAll('.yd-cont'));
+
+  /* open the first container by default so content is visible immediately */
+  if(containers[0])openCont(containers[0],false);
+
+  function openCont(cont,focus){
+    cont.classList.add('open');
+    var p=cont.querySelector('.placard');
+    if(p){p.setAttribute('aria-expanded','true');var k=p.querySelector('.knob');if(k)k.textContent='▾ HELD';}
+    if(focus){var c=cont.querySelector('.cargo');if(c)c.setAttribute('tabindex','-1');}
+  }
+  function closeCont(cont){
+    cont.classList.remove('open');
+    var p=cont.querySelector('.placard');
+    if(p){p.setAttribute('aria-expanded','false');var k=p.querySelector('.knob');if(k)k.textContent='▸ LIFT';}
+  }
+  function toggle(cont){
+    if(cont.classList.contains('open'))closeCont(cont);
+    else{
+      cont.classList.add('lifted');
+      setTimeout(function(){cont.classList.remove('lifted');},260);
+      openCont(cont,true);
+    }
+  }
+
+  containers.forEach(function(cont){
+    var p=cont.querySelector('.placard');
+    p.addEventListener('click',function(){toggle(cont);});
+    p.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(cont);}
+    });
+  });
+
+  /* ===== CRANE CURSOR ===== */
+  var crane=document.getElementById('ydCrane');
+  var clampTxt=document.getElementById('ydClampTxt');
+  var yardBox=null;
+  var craneX=0,targetX=0;
+  var hoverCont=null;
+
+  function refreshBox(){yardBox=yard.getBoundingClientRect();}
+  refreshBox();
+  window.addEventListener('resize',refreshBox);
+  window.addEventListener('scroll',refreshBox,{passive:true});
+
+  yard.addEventListener('mousemove',function(e){
+    if(!yardBox)refreshBox();
+    targetX=e.clientX-yardBox.left;
+    /* which container is under the crane */
+    var el=document.elementFromPoint(e.clientX,e.clientY);
+    var c=el?el.closest('.yd-cont'):null;
+    if(c!==hoverCont){
+      if(hoverCont)hoverCont.classList.remove('hovered');
+      hoverCont=c;
+      if(hoverCont){
+        hoverCont.classList.add('hovered');
+        crane.classList.add('grabbing');
+        var lbl=hoverCont.querySelector('.placard h3');
+        clampTxt.textContent='◆ '+(lbl?lbl.textContent.slice(0,14):'CARGO');
+      }else{
+        crane.classList.remove('grabbing');
+        clampTxt.textContent='◇ IDLE';
+      }
+    }
+  });
+  yard.addEventListener('mouseleave',function(){
+    if(hoverCont){hoverCont.classList.remove('hovered');hoverCont=null;}
+    crane.classList.remove('grabbing');
+    clampTxt.textContent='◇ IDLE';
+  });
+
+  /* smooth follow */
+  function tick(){
+    craneX+=(targetX-craneX)*0.18;
+    crane.style.transform='translateX('+(craneX-60)+'px)';
+    requestAnimationFrame(tick);
+  }
+  /* only animate crane on fine-pointer (desktop) */
+  if(window.matchMedia&&window.matchMedia('(pointer:fine)').matches){
+    requestAnimationFrame(tick);
+  }else{
+    crane.style.display='none';
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+})();
+</script>
 </body>
 </html>
